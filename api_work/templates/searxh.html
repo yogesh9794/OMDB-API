@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Movie</title>
+</head>
+
+<body>
+    <div class="bodyincome">
+        <!-- == here goes the header of the page == -->
+        <div class="header_banner">
+            <h2 align='center'>Income Tax Calculator</h2>
+            <p align='center'>(AY : 2020-21)</p>
+
+        </div>
+        <!-- Test the block box multi step -->
+
+
+        <div class="cal" style="margin: 50px 8%">
+            <section>
+                <div class="container">
+                    {% csrf_token %}
+
+                    <form action="income_cal" class="form" method="GET">
+                        <!-- Progress bar -->
+                        <div class="progress" id="progress"></div>
+                        <div class="progressbar">
+                            <div class="progress-step progress-step-active" data-title="Intro"></div>
+                            <div class="progress-step" data-title="Detail"></div>
+                            <div class="progress-step" data-title="Cacultion"></div>
+                        </div>
+
+                        <!-- Steps -->
+                        <div class="form-step form-step-active">
+                            <div class="input-group">
+                                <label for="fname">Full Name</label>
+                                <input type="text" name="fname" id="fname">
+                            </div>
+
+                            <div class="input-group">
+                                <label for="employmenttype">Employment Type</label>
+                                <select id="emp">
+                                    <!--name="emp"-->
+                                    <option value="Self Employed">Self Employed</option>
+                                    <option value="Salaried">Salaried</option>
+                                </select>
+                            </div>
+                            <div class="input-group">
+                                <label for="batch">Gender*</label>
+                                <select name="gender" id="gender">
+                                    <option value="">Select</option>
+                                    <option value="male">Male</option>
+                                    <option value="Woman">Female</option>
+                                </select>
+                            </div>
+                            <div class="">
+                                <a href="#" class="btn btn-next width-50 ml-auto">Next</a>
+                            </div>
+                        </div>
+                        <div class="form-step">
+                            <div class="input-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="text" name="phone" id="phone">
+                            </div>
+
+                            <div class="input-group">
+                                <label for="email">Email</label>
+                                <input type="text" name="email" id="email">
+                            </div>
+                            <div class="btn-group">
+                                <a href="#" class="btn btn-prev">Prev</a>
+                                <a href="#" class="btn btn-next">Next</a>
+                            </div>
+                        </div>
+                        <div class="form-step">
+                            <div class="input-group">
+                                <label for="gross_salary">Gross Salary</label>
+                                <input type="number" name="gross_salary" id="gross_salary">
+                            </div>
+                            <div class="input-group">
+                                <label for="hra_lta">Hra & LTA</label>
+                                <input type="number" name="hra_lta" id="hra_lta">
+                            </div>
+                            <div class="input-group">
+                                <label for="tax_ded">Tax Deduction</label>
+                                <input type="number" name="tax_ded" id="tax_ded">
+                            </div>
+                            <div class="input-group">
+                                <label for="hlt_ins_prm">Health Insurance Premium</label>
+                                <input type="number" name="hlt_ins_prm" id="hlt_ins_prm">
+                            </div>
+                            <div class="input-group">
+                                <label for="nps">NPS</label>
+                                <input type="number" name="nps" id="nps">
+                            </div>
+
+                            <div class="btn-group">
+                                <a href="#" class="btn btn-prev">Prev</a>
+                                <!-- <input type="submit" value="Submit" class="btn">
+                                <button type="submit" class="submit-btn">Submit</button> -->
+                                <button type="submit" value="submit" class="submit-btn">Calculate</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </section>
+        </div>
+    </div>
+</body>
+
+</html>

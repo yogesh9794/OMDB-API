@@ -19,6 +19,9 @@ def index(request):
     return render(request, 'index.html')
 
 
+def search(request):
+    return(request, 'searxh.html')
+
 # def output(request):
 #     print('output')
 #     if request.method == 'GET':
